@@ -4,8 +4,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "vite && node --loader ts-node/esm src/buildPDF.ts",
-    "build": "vue-tsc --noEmit && vite build && node --loader ts-node/esm src/buildPDF.ts",
+    "dev": "vite",
+    "pdf": "node --loader ts-node/esm src/buildPDF.ts",
+    "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview"
   },
   "dependencies": {

@@ -1,7 +1,7 @@
 import fs from 'fs-extra'
 import puppeteer from 'puppeteer'
 
-const URL = 'http://127.0.0.1:5173'
+const URL = 'http://127.0.0.1:5173/'
 
 export async function buildPDF(url: string) {
   const browser = await puppeteer.launch({ headless: true })
@@ -19,7 +19,7 @@ export async function buildPDF(url: string) {
     },
   })
   await browser.close()
-  fs.writeFileSync('./dist/resume.pdf', pdf)
+  fs.writeFileSync('./public/resume.pdf', pdf)
   return pdf
 }
 
