@@ -4,17 +4,21 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
+    "dev": "vite && node --loader ts-node/esm src/buildPDF.ts",
+    "build": "vue-tsc --noEmit && vite build && node --loader ts-node/esm src/buildPDF.ts",
     "preview": "vite preview"
   },
   "dependencies": {
+    "ts-node": "^10.9.1",
     "vue": "^3.2.37"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.26.1",
+    "@types/fs-extra": "^9.0.13",
+    "@types/node": "^18.7.13",
     "@vitejs/plugin-vue": "^3.0.3",
     "eslint": "^8.22.0",
+    "fs-extra": "^10.1.0",
     "puppeteer": "^16.2.0",
     "typescript": "^4.6.4",
     "vite": "^3.0.7",
